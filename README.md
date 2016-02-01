@@ -1,5 +1,7 @@
 # Model Annotation for Laravel 5
 
+ModelAnnotation puts database schema aside with your model files for easy reference.
+
 Add annotation to plain Laravel model files
 
 ![plain file](https://www.httpsreminder.com/images/no_annotation.png) ![with annotation](https://www.httpsreminder.com/images/with_annotation.png)
@@ -11,10 +13,10 @@ Add annotation to plain Laravel model files
 This package only works with MySQL for now.
 
 
-0. *Make sure you have backup or VCS*.
+- *Make sure you have backup or VCS*.
 
 
-1. Modify composer.json file, include following line for `require` section:
+- Modify composer.json file, include following line for `require` section:
 
 ```
 "require": {
@@ -24,10 +26,10 @@ This package only works with MySQL for now.
 ```
 
 
-2. Run `composer update` to install newly added package
+- Run `composer update` to install newly added package
 
 
-3. Add `Service Provider` in `app.php`:
+- Add `Service Provider` in `app.php`:
 
 ```
 'providers' => [
@@ -37,6 +39,6 @@ This package only works with MySQL for now.
 ```
 
 
-4. Run `php artisan annotate:models` to annotate model files
+- Run `php artisan annotate:models` to annotate model files
 
 
