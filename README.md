@@ -1,13 +1,15 @@
 # Model Annotation for Laravel 5
 
-Change from
-![plain file](https://www.httpsreminder.com/images/no_annotation.png)
+Add annotation to plain Laravel model files
 
-to
-![with annotation](https://www.httpsreminder.com/images/with_annotation.png)
+![plain file](https://www.httpsreminder.com/images/no_annotation.png) ![with annotation](https://www.httpsreminder.com/images/with_annotation.png)
+
 
 
 ## Usage
+
+This package only works with MySQL for now.
+
 
 0. *Make sure you have backup or VCS*.
 
