@@ -6,7 +6,11 @@ use Illuminate\Support\ServiceProvider;
 use Log;
 
 class AnnotationServiceProvider extends ServiceProvider {
+    protected $commands = [
+        'qsun\ModelAnnotation\AnnotateCommand'
+    ];
+
     public function register() {
-        Log::debug('ok');
+        $this->commands($this->commands);
     }
 }
