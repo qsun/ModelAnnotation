@@ -1,0 +1,20 @@
+{
+    "name": "qsun/model-annotation",
+    "license": "LGPL",
+    "version": "1.1",
+    "authors": [
+        {
+            "name": "qsun",
+            "email": "qsun@qsun.me"
+            }
+    ],
+    "autoload": {
+        "psr-4": { "qsun\\ModelAnnotation\\": "src/" }
+    },
+    "require": {
+        "php" : ">=5.3.2",
+        "laravel/framework": ">=5.2.0"
+    },
+    "require-dev": {
+    }
+}
