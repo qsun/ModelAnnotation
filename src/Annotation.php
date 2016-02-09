@@ -23,7 +23,38 @@ class Annotation {
     }
 
     protected static function getTableStructure($table) {
-        $description = DB::select('SHOW CREATE TABLE ' . $table)[0]->{'Create Table'};
+        $description = '';
+        $fields = DB::select('DESC ' . $table);
+
+        foreach ($fields as $field) {
+            $type = $field->{'Type'};
+            if (1==preg_match('/^int/', $type)) {
+                $type = 'int';
+            } elseif ($type == 'timestamp') {
+                $type = 'int';
+            } elseif (1==preg_match('/^varchar/', $type)) {
+                $type = 'string';
+            } else {
+                // pass
+            }
+
+            if ($field->{'Null'} === 'YES') {
+                $type = "$type|null";
+            }
+
+            $default = $field->{'Default'};
+            if ('' == $default) {
+                $default = 'null';
+            }
+
+            $key = $field->{'Key'};
+            if ('' == $key) {
+                $key = 'nil';
+            }
+
+            $description = $description . "@property $type \${$field->{'Field'}} Type: {$field->{'Type'}}, Extra: {$field->{'Extra'}}, Default: $default, Key: $key\n";
+        }
+
         return $description;
     }
 
