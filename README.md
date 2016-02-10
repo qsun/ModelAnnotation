@@ -4,8 +4,27 @@ ModelAnnotation puts database schema aside with your model files for easy refere
 
 Add annotation to plain Laravel model files
 
-![plain file](https://www.httpsreminder.com/images/no_annotation.png) ![with annotation](https://www.httpsreminder.com/images/with_annotation.png)
+```
+<?php
+/* MODEL ANNOTATION:
+@property int $id Type: int(10) unsigned, Extra: auto_increment, Default: null, Key: PRI
+@property string $name Type: varchar(255), Extra: , Default: null, Key: nil
+@property string $email Type: varchar(255), Extra: , Default: null, Key: UNI
+@property string $password Type: varchar(60), Extra: , Default: null, Key: nil
+@property string|null $remember_token Type: varchar(100), Extra: , Default: null, Key: nil
+@property int|null $created_at Type: timestamp, Extra: , Default: null, Key: nil
+@property int|null $updated_at Type: timestamp, Extra: , Default: null, Key: nil
 
+END MODEL ANNOTATION */
+
+namespace App;
+
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
+{
+    /**
+```
 
 
 ## Usage
