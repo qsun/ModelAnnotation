@@ -16,7 +16,7 @@ class AnnotateCommand extends Command {
         parent::__construct();
     }
 
-    public function fire() {
+    public function handle() {
         foreach (DB::select('SHOW TABLES') as $table) {
             foreach (get_object_vars($table) as $table_name) {
                 Annotation::annotateTable(app(), $table_name);
