@@ -7,13 +7,14 @@ Add annotation to plain Laravel model files
 ```
 <?php
 /* MODEL ANNOTATION:
-@property int $id Type: int(10) unsigned, Extra: auto_increment, Default: null, Key: PRI
-@property string $name Type: varchar(255), Extra: , Default: null, Key: nil
-@property string $email Type: varchar(255), Extra: , Default: null, Key: UNI
-@property string $password Type: varchar(60), Extra: , Default: null, Key: nil
-@property string|null $remember_token Type: varchar(100), Extra: , Default: null, Key: nil
-@property int|null $created_at Type: timestamp, Extra: , Default: null, Key: nil
-@property int|null $updated_at Type: timestamp, Extra: , Default: null, Key: nil
+@property	$id                      Type: bigint(20) unsigned      Extra: auto_increment      Default: null      Key: PRI
+@property	$name                    Type: varchar(255)             Extra:                     Default: null      Key: nil
+@property	$email                   Type: varchar(255)             Extra:                     Default: null      Key: UNI
+@property	$email_verified_at       Type: timestamp                Extra:                     Default: null      Key: nil
+@property	$password                Type: varchar(255)             Extra:                     Default: null      Key: nil
+@property	$remember_token          Type: varchar(100)             Extra:                     Default: null      Key: nil
+@property	$created_at              Type: timestamp                Extra:                     Default: null      Key: nil
+@property	$updated_at              Type: timestamp                Extra:                     Default: null      Key: nil
 
 END MODEL ANNOTATION */
 
