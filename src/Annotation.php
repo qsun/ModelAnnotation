@@ -52,7 +52,9 @@ class Annotation {
                 $key = 'nil';
             }
 
-            $description = $description . "@property $type \${$field->{'Field'}} Type: {$field->{'Type'}}, Extra: {$field->{'Extra'}}, Default: $default, Key: $key\n";
+            $description = $description . "@property\t" . str_pad("\$".$field->{'Field'}, 25)
+                . "Type: ". str_pad($field->{'Type'}, 25) ."Extra: ". str_pad($field->{'Extra'}, 20)
+                . "Default: ". str_pad($default, 10) ."Key: $key\n";
         }
 
         return $description;
